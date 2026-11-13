@@ -6,4 +6,4 @@ resources:
 images:
   - name: message-board
     newName: 582995372164.dkr.ecr.ap-southeast-3.amazonaws.com/firman-message-demo
-    newTag: f8ea97c3e31618c05b2c2997f6fdc9eda8331b3e
+    newTag: baf3f9072c024f8b1b5873f1f6153b4f5be245fb
