@@ -1,7 +1,7 @@
 resource "aws_ecr_repository" "app" {
   name                 = var.project_name
   image_tag_mutability = "IMMUTABLE"
-  force_delete         = true
+  force_delete         = false
   encryption_configuration { encryption_type = "AES256" }
 }
 
@@ -48,7 +48,7 @@ data "aws_iam_policy_document" "github_trust" {
 }
 
 resource "aws_iam_role" "github_ecr_push" {
-  name               = "${var.project_name}-github-ecr-push"
+  name               = "${var.project_name}-github-ecr-push-yassir-demo-aja"
   assume_role_policy = data.aws_iam_policy_document.github_trust.json
 }
 
