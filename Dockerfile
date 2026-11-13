@@ -5,6 +5,6 @@ RUN CGO_ENABLED=0 GOOS=linux go build -trimpath -ldflags="-s -w" -o /message-boa
 
 FROM gcr.io/distroless/static-debian12:nonroot
 COPY --from=build /message-board /message-board
-USER nonroot:nonroot
+USER 65532:65532
 EXPOSE 8080
 ENTRYPOINT ["/message-board"]
