@@ -21,6 +21,24 @@ variable "github_repository" {
   }
 }
 
+variable "github_repository_owner_id" {
+  description = "Numeric GitHub owner ID for the immutable OIDC subject."
+  type        = string
+  validation {
+    condition     = can(regex("^[0-9]+$", var.github_repository_owner_id))
+    error_message = "Use the numeric GitHub owner ID."
+  }
+}
+
+variable "github_repository_id" {
+  description = "Numeric GitHub repository ID for the immutable OIDC subject."
+  type        = string
+  validation {
+    condition     = can(regex("^[0-9]+$", var.github_repository_id))
+    error_message = "Use the numeric GitHub repository ID."
+  }
+}
+
 variable "existing_github_oidc_provider_arn" {
   description = "Optional ARN of an existing GitHub Actions OIDC provider in this account."
   type        = string

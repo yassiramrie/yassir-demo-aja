@@ -55,7 +55,7 @@ Jika repository sudah punya Git, gunakan remote yang ada. Jangan commit `terrafo
 
 ### Buat ECR untuk ketiga use case
 
-Terraform registry berdiri sendiri; jalankan **sekali** sebelum memilih cluster. Ini membuat ECR private di Jakarta dan role GitHub Actions OIDC yang hanya boleh push ke repository tersebut. Masukkan nama repo GitHub ke `terraform.tfvars`:
+Terraform registry berdiri sendiri; jalankan **sekali** sebelum memilih cluster. Ini membuat ECR private di Jakarta dan role GitHub Actions OIDC yang hanya boleh push ke repository tersebut. Masukkan nama repo GitHub serta numeric owner/repository ID ke `terraform.tfvars`. GitHub memakai immutable OIDC subject untuk repository yang dibuat sejak 15 Juli 2026; ID dapat dilihat melalui GitHub API pada `https://api.github.com/repos/OWNER/REPOSITORY`:
 
 ```bash
 cp infra/terraform-registry/terraform.tfvars.example infra/terraform-registry/terraform.tfvars
