@@ -61,8 +61,8 @@ data "aws_iam_policy_document" "ecr_push" {
   }
   statement {
     actions = [
-      "ecr:BatchCheckLayerAvailability", "ecr:CompleteLayerUpload", "ecr:InitiateLayerUpload",
-      "ecr:PutImage", "ecr:UploadLayerPart"
+      "ecr:BatchCheckLayerAvailability", "ecr:BatchGetImage", "ecr:CompleteLayerUpload",
+      "ecr:InitiateLayerUpload", "ecr:PutImage", "ecr:UploadLayerPart"
     ]
     resources = [aws_ecr_repository.app.arn]
   }
